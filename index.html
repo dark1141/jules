@@ -3,69 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Device Investment Simulator</title>
+    <title data-translate-key="pageTitle">Device Investment Simulator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Device Investment Simulator</h1>
+    <div id="language-selector-container">
+        <label for="language-select" data-translate-key="common_selectLanguageLabel">Select Language:</label>
+        <select id="language-select"></select>
+    </div>
+
+    <h1 data-translate-key="mainHeading">Device Investment Simulator</h1>
 
     <div id="home-view">
         <section>
-            <h2>Current Point Balance</h2>
-            <p><span id="point-balance">Loading...</span> points</p>
+            <h2 data-translate-key="home_currentBalanceTitle">Current Point Balance</h2>
+            <p><span id="point-balance" data-translate-key="home_loadingPoints">Loading...</span><span data-translate-key="home_pointsSuffix" class="translate-suffix"> points</span></p>
         </section>
 
         <section>
-            <h2>Investment Portfolio</h2>
+            <h2 data-translate-key="home_portfolioTitle">Investment Portfolio</h2>
             <div id="portfolio-list">
                 <!-- Portfolio items will be loaded here by JavaScript -->
-                <p>Loading portfolio...</p>
+                <p data-translate-key="home_loadingPortfolio">Loading portfolio...</p>
             </div>
         </section>
     </div>
 
     <div id="device-list-view">
-        <h2>Available Devices for Investment</h2>
+        <h2 data-translate-key="devices_title">Available Devices for Investment</h2>
         <div id="devices-container">
             <!-- Devices will be loaded here by JavaScript -->
-            <p>Loading devices...</p>
+            <p data-translate-key="devices_loading">Loading devices...</p>
         </div>
     </div>
 
     <div id="investment-view">
-        <h2>Invest in a Device</h2>
+        <h2 data-translate-key="invest_title">Invest in a Device</h2>
         <section>
             <div>
-                <label for="investment-device-select">Choose a device:</label>
+                <label for="investment-device-select" data-translate-key="invest_chooseDeviceLabel">Choose a device:</label>
                 <select id="investment-device-select">
                     <!-- Options will be loaded by JavaScript -->
-                    <option value="">Loading devices...</option>
+                    <option value="" data-translate-key="invest_loadingDevicesOption">Loading devices...</option>
                 </select>
             </div>
             <div>
-                <label for="investment-amount-input">Amount to invest (points):</label>
-                <input type="number" id="investment-amount-input" placeholder="Enter points">
+                <label for="investment-amount-input" data-translate-key="invest_amountLabel">Amount to invest (points):</label>
+                <input type="number" id="investment-amount-input" data-translate-placeholder-key="invest_amountPlaceholder" placeholder="Enter points">
             </div>
-            <button id="invest-button">Invest</button>
+            <button id="invest-button" data-translate-key="invest_button">Invest</button>
             <div id="investment-feedback"></div>
         </section>
     </div>
 
     <div id="daily-results-view">
-        <h2>Daily Summary</h2>
+        <h2 data-translate-key="results_title">Daily Summary</h2>
         <div id="daily-changes-container">
             <!-- Daily changes will be loaded here -->
-            <p>Simulate a day to see results.</p>
+            <p data-translate-key="results_initialMessage">Simulate a day to see results.</p>
         </div>
-        <p>Total Portfolio Gain/Loss for the Day: <span id="daily-total-gain-loss">N/A</span></p>
-        <button id="simulate-day-button">Simulate Next Day</button>
+        <p><span data-translate-key="results_totalGainLossLabel">Total Portfolio Gain/Loss for the Day: </span><span id="daily-total-gain-loss" data-translate-key="results_notAvailable">N/A</span></p>
+        <button id="simulate-day-button" data-translate-key="results_simulateButton">Simulate Next Day</button>
     </div>
 
     <div id="test-runner-view">
-        <h2>Test Runner</h2>
-        <button id="run-tests-button">Run Tests</button>
+        <h2 data-translate-key="test_runnerTitle">Test Runner</h2>
+        <button id="run-tests-button" data-translate-key="test_runTestsButton">Run Tests</button>
         <div id="test-results-container">
-            <p>Click "Run Tests" to see results. Check the console for detailed logs.</p>
+            <p data-translate-key="test_initialMessage">Click "Run Tests" to see results. Check the console for detailed logs.</p>
         </div>
     </div>
 
