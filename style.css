@@ -1,0 +1,287 @@
+/* Styles for Device Investment Simulator */
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+h2 {
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+#home-view section {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#point-balance {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.portfolio-item {
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.portfolio-item h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.positive-return {
+    color: green;
+}
+
+.negative-return {
+    color: red;
+}
+
+/* Basic responsive design for smaller screens */
+@media (max-width: 600px) {
+    body {
+        margin: 10px;
+    }
+
+    #home-view section {
+        padding: 10px;
+    }
+}
+
+/* Device List View styles */
+#device-list-view {
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#devices-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.device-item {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.device-item h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.device-item p {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.trend-up {
+    color: green;
+    font-weight: bold;
+}
+
+/* Investment View styles */
+#investment-view {
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#investment-view section div {
+    margin-bottom: 10px;
+}
+
+#investment-view label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+#investment-view select,
+#investment-view input[type="number"],
+#investment-view button {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: calc(100% - 18px); /* Account for padding and border */
+    box-sizing: border-box;
+}
+
+#investment-view button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#investment-view button:hover {
+    background-color: #218838;
+}
+
+#investment-feedback {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+#investment-feedback.positive-return { /* Re-use existing class for consistency */
+    background-color: #e6ffed;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+#investment-feedback.negative-return { /* Re-use existing class for consistency */
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* Daily Results View styles */
+#daily-results-view {
+    background-color: #fff;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#daily-results-view h2 {
+    margin-top: 0;
+}
+
+#daily-changes-container {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    min-height: 50px;
+}
+
+.daily-change-item {
+    margin-bottom: 8px;
+    padding: 5px;
+    border-bottom: 1px dotted #ddd;
+}
+
+.daily-change-item:last-child {
+    border-bottom: none;
+}
+
+#daily-total-gain-loss {
+    font-weight: bold;
+}
+
+#simulate-day-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* Make it easier to see and click */
+    margin-top: 10px;
+}
+
+#simulate-day-button:hover {
+    background-color: #0056b3;
+}
+
+/* Test Runner View styles */
+#test-runner-view {
+    background-color: #f0f0f0; /* Light grey background */
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+}
+
+#test-runner-view h2 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 5px;
+}
+
+#run-tests-button {
+    background-color: #ffc107; /* Amber/yellow */
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-bottom: 15px; /* Space between button and results */
+}
+
+#run-tests-button:hover {
+    background-color: #e0a800; /* Darker amber/yellow */
+}
+
+#test-results-container {
+    padding: 10px;
+    background-color: #fff; /* White background for results */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-height: 50px;
+    max-height: 300px; /* Prevent it from getting too tall */
+    overflow-y: auto; /* Add scroll for many results */
+}
+
+#test-results-container p {
+    margin: 5px 0;
+    padding: 3px;
+    font-family: monospace; /* Monospace font for test results */
+    font-size: 0.9em;
+}
+
+.test-pass {
+    color: green;
+}
+
+.test-fail {
+    color: red;
+    font-weight: bold;
+}
+
+#test-results-container strong { /* Styling for the summary line */
+    font-family: sans-serif; /* Back to sans-serif for summary */
+    font-size: 1em;
+}
+
+.trend-stable {
+    color: #555;
+}
+
+.trend-down {
+    color: red;
+    font-weight: bold;
+}
