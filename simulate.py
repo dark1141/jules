@@ -75,15 +75,19 @@ if __name__ == "__main__":
         initial_data = {"devices": []} # Fallback to empty devices
 
     print("Initial data:")
+    print("Initial data:")
     print(json.dumps(initial_data, indent=2))
 
-    updated_data = update_all_device_values(initial_data.copy()) # Use .copy() to avoid modifying initial_data directly if needed elsewhere
+    # Pass the dictionary directly; update_all_device_values modifies it in place.
+    # For the standalone script, this means subsequent calls will use the modified data.
+    updated_data = update_all_device_values(initial_data) 
 
     print("\nUpdated data after one simulation round:")
     print(json.dumps(updated_data, indent=2))
 
-    # Example of running a few more rounds
+    # Example of running a few more rounds sequentially
     for i in range(3):
+        # Each call to update_all_device_values modifies the data further
         updated_data = update_all_device_values(updated_data)
         print(f"\nUpdated data after simulation round {i+2}:")
         print(json.dumps(updated_data, indent=2))
