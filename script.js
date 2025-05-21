@@ -1,3 +1,4 @@
+console.log("--- script.js started ---");
 // JavaScript for Device Investment Simulator
 let currentTranslations = {};
 
@@ -19,6 +20,7 @@ function getString(key, params = {}) {
 }
 
 async function loadTranslations(languageCode) {
+    // This is the version before detailed [loadTranslations] logs were added
     const path = `locales/${languageCode}.json`;
     try {
         const response = await fetch(path);
@@ -26,16 +28,16 @@ async function loadTranslations(languageCode) {
             throw new Error(`Failed to load translation file: ${path}. Status: ${response.status}`);
         }
         currentTranslations = await response.json();
-        console.log(`Translations loaded for ${languageCode}:`, currentTranslations);
-        return true; // Indicate success
+        // console.log(`Translations loaded for ${languageCode}:`, currentTranslations); // Original success log (can be kept or removed for this test)
+        return true; 
     } catch (error) {
-        console.error(`Error loading translations for ${languageCode}:`, error);
-        if (languageCode !== 'en') { // Avoid infinite loop if English fails
+        console.error(`Error loading translations for ${languageCode}:`, error); // Original error log
+        if (languageCode !== 'en') { 
             console.warn('Falling back to English translations.');
-            return loadTranslations('en'); // Attempt to load English as a fallback
+            return loadTranslations('en'); 
         }
-        currentTranslations = {}; // Reset or ensure it's empty on critical failure
-        return false; // Indicate failure
+        currentTranslations = {}; 
+        return false; 
     }
 }
 
@@ -821,13 +823,15 @@ function runTests() {
 // Modify window.onload to attach event listener for the simulate and test buttons
 // Also, improve error handling display for initialDataLoad failure.
 window.onload = async () => {
-    // Ensure translations are loaded first, as error messages might use them.
-    // Assuming a default language is set or 'en' is tried by default in loadTranslations.
+    console.log("[window.onload] Entered function."); // <<< ENSURE THIS IS THE FIRST LINE INSIDE window.onload
+
     const langSelect = document.getElementById('language-select');
     const initialLang = langSelect ? langSelect.value : 'en';
-    await loadTranslations(initialLang || 'en'); // Ensure translations are loaded
-    applyTranslations(); // Apply them to static content
-
+    
+    // For now, keep the call to loadTranslations, but we're checking if we even get here.
+    await loadTranslations(initialLang || 'en'); 
+    applyTranslations(); 
+    
     const dataLoaded = await initialDataLoad(); // initialDataLoad now uses /api/data
 
     if (dataLoaded) {
